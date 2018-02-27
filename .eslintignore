@@ -1,0 +1,8 @@
+.eslint*
+**/node_modules
+**/bower_components
+**/vendor
+**/*.min.js
+**/webpack.config.js
+client/data/*
+compiled/
