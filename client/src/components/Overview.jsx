@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 class Overview extends React.Component {
   constructor(props) {
@@ -10,9 +11,10 @@ class Overview extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/restaurants/124')
+    const id = this.props.ids[Math.floor(Math.random() * this.props.ids.length)];
+    axios.get(`/restaurants/${id}`)
       .then((response) => {
-        console.log(response);
+        console.log(response.data);
       })
       .catch((err) => {
         console.log(err);
@@ -31,5 +33,9 @@ class Overview extends React.Component {
 // 1) Restaurant Title
 // 2) Restaurant Tagline
 // 3) The WeGot divider line
+
+Overview.propTypes = {
+  ids: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 export default Overview;

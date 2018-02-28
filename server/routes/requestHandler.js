@@ -1,6 +1,14 @@
+const db = require('./../../db/db.js');
+
 const actions = {
   GET: function respondToGETRequest(req, res) {
-    res.send(`got the GET for id: ${req.params.id}`);
+    db.findOneById(req.params.id, (err, result) => {
+      if (err) {
+        res.sendStatus(500);
+      } else {
+        res.send(result);
+      }
+    });
   },
 };
 
@@ -8,7 +16,7 @@ const requestHandler = (req, res) => {
   if (actions[req.method]) {
     actions[req.method](req, res);
   } else {
-    res.status(404).send();
+    res.sendStatus(404);
   }
 };
 

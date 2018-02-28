@@ -5,20 +5,20 @@ import Overview from '../client/src/components/Overview';
 
 configure({ adapter: new Adapter() });
 
-describe('A suite', function() {
-  it('should render without throwing an error', function() {
+describe('A suite', function () {
+  it('should render without throwing an error', function () {
     expect(shallow(<Overview />).contains(<div id="top">Hello World</div>)).toBe(true);
   });
 
-  it('should be selectable by id "top"', function() {
+  it('should be selectable by id "top"', function () {
     expect(shallow(<Overview />).is('#top')).toBe(true);
   });
 
-  it('should mount in a full DOM', function() {
+  it('should mount in a full DOM', function () {
     expect(mount(<Overview />).find('#top').length).toBe(1);
   });
 
-  it('should render to static HTML', function() {
+  it('should render to static HTML', function () {
     expect(render(<Overview />).text()).toEqual('Hello World');
   });
 });
