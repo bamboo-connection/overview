@@ -5,6 +5,7 @@ const restaurantSchema = mongoose.Schema({
     type: String,
     unique: true,
   },
+  name: String,
   tagline: String,
   type: String,
   vicinity: String,

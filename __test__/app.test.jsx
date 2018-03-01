@@ -2,25 +2,35 @@ import React from 'react';
 import { configure, mount, shallow, render } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import Overview from '../client/src/components/Overview';
+import { ids } from '../ids';
 
 configure({ adapter: new Adapter() });
 
-describe('A suite', function () {
-  it('should render without throwing an error', function () {
-    expect(shallow(<Overview />).contains(<div id="top">Hello World</div>)).toBe(true);
+describe('A suite', () => {
+  const overviewShallow = shallow(<Overview ids={ids} />);
+  const overviewMount = mount(<Overview ids={ids} />);
+  const overviewRender = render(<Overview ids={ids} />);
+
+  it('should render without throwing an error', () => {
+    expect(overviewShallow.contains(<div id="overview-restaurant-title">Title Placeholder</div>))
+      .toBe(true);
   });
 
-  it('should be selectable by id "top"', function () {
-    expect(shallow(<Overview />).is('#top')).toBe(true);
+  it('should be selectable by id "overview-wrapper"', () => {
+    expect(overviewShallow.is('#overview-wrapper')).toBe(true);
   });
 
-  it('should mount in a full DOM', function () {
-    expect(mount(<Overview />).find('#top').length).toBe(1);
+  it('should mount in a full DOM', () => {
+    expect(overviewMount.find('#overview-wrapper').length).toBe(1);
   });
 
-  it('should render to static HTML', function () {
-    expect(render(<Overview />).text()).toEqual('Hello World');
+  it('should render to static HTML', () => {
+    expect(overviewRender.text()).toEqual('Title PlaceholderTagline Placeholder');
   });
+
+  // it('should have the state matching the rendered innerHTML', () => {
+
+  // });
 });
 
 

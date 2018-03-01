@@ -6,7 +6,8 @@ class Overview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hello: 'Hello World',
+      restaurantTitle: 'Title Placeholder',
+      restaurantTagline: 'Tagline Placeholder',
     };
   }
 
@@ -14,16 +15,26 @@ class Overview extends React.Component {
     const id = this.props.ids[Math.floor(Math.random() * this.props.ids.length)];
     axios.get(`/restaurants/${id}`)
       .then((response) => {
-        console.log(response.data);
+        this.handleRestaurantChange(response.data[0]);
       })
       .catch((err) => {
-        console.log(err);
+        throw err;
       });
+  }
+
+  handleRestaurantChange(restaurantDetails) {
+    this.setState({
+      restaurantTitle: restaurantDetails.name,
+      restaurantTagline: restaurantDetails.tagline,
+    });
   }
 
   render() {
     return (
-      <div id="top">{this.state.hello}</div>
+      <div id="overview-wrapper">
+        <div id="overview-restaurant-title">{this.state.restaurantTitle}</div>
+        <div id="overview-restaurant-tagline">{this.state.restaurantTagline}</div>
+      </div>
     );
   }
 }
