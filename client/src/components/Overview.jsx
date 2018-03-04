@@ -10,10 +10,9 @@ class Overview extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      renderBool: false,
       restaurantTitle: 'Title Placeholder',
       restaurantTagline: 'Tagline Placeholder',
-      restaurantType: 'Restaurant',
+      restaurantType: 'Restaurant', // this is hardcoded for now due to a capitalization error in the data.
       restaurantVicinity: 'Vicinity Placeholder',
       restaurantPriceLevel: 'Price Level Placeholder',
       weGotFoodRating: 'Food Rating Placeholder',
@@ -27,7 +26,6 @@ class Overview extends React.Component {
     const id = this.props.ids[Math.floor(Math.random() * this.props.ids.length)];
     axios.get(`/restaurants/${id}`)
       .then((response) => {
-        console.log(response.data[0]);
         this.handleRestaurantChange(response.data[0]);
       })
       .catch((err) => {
@@ -42,7 +40,6 @@ class Overview extends React.Component {
       priceLevelInDollars += '$';
     }
     this.setState({
-      renderBool: true,
       restaurantTitle: restaurantDetails.name.toUpperCase(),
       restaurantTagline: restaurantDetails.tagline,
       restaurantVicinity: restaurantDetails.vicinity,
@@ -55,30 +52,27 @@ class Overview extends React.Component {
   }
 
   render() {
-    if (this.state.renderBool) {
-      return (
-        <div id="overview-wrapper">
-          <div id="overview-restaurant-title">{this.state.restaurantTitle}</div>
-          <div id="overview-restaurant-tagline">{this.state.restaurantTagline}</div>
-          <BasicDetails
-            type={this.state.restaurantType}
-            vicinity={this.state.restaurantVicinity}
-            priceLevel={this.state.restaurantPriceLevel}
-          />
-          <DividerLine />
-          <div className="overview-wegot-review-title">THE WEGOT REVIEW</div>
-          <WeGotReview
-            food={this.state.weGotFoodRating}
-            decor={this.state.weGotDecorRating}
-            service={this.state.weGotServiceRating}
-          />
-          <LongDescription
-            description={this.state.restaurantDescription}
-          />
-        </div>
-      );
-    }
-    return (<div>Loading...</div>);
+    return (
+      <div id="overview-wrapper">
+        <div id="overview-restaurant-title">{this.state.restaurantTitle}</div>
+        <div id="overview-restaurant-tagline">{this.state.restaurantTagline}</div>
+        <BasicDetails
+          type={this.state.restaurantType}
+          vicinity={this.state.restaurantVicinity}
+          priceLevel={this.state.restaurantPriceLevel}
+        />
+        <DividerLine />
+        <div className="overview-wegot-review-title">THE WEGOT REVIEW</div>
+        <WeGotReview
+          food={this.state.weGotFoodRating}
+          decor={this.state.weGotDecorRating}
+          service={this.state.weGotServiceRating}
+        />
+        <LongDescription
+          description={this.state.restaurantDescription}
+        />
+      </div>
+    );
   }
 }
 
