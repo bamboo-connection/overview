@@ -1,6 +1,110 @@
-#overview-wrapper {
-  background-color: skyblue;
-}
+/* ====================================================== */
+/* ============= App/Overview Module Styles ============= */
+/* ====================================================== */
 body {
-  background-color: khaki;
+  background-color: #f1f1f2;;
+}
+#overview-wrapper {
+  width: 55%;
+  border: 1px solid white;
+  background: white;
+  padding: 26px 32px 32px;
+  max-width: 900px
+}
+#overview-restaurant-title {
+  letter-spacing: 0.10em;
+  font: bold 'Calibre-Medium';
+  font-size: 24px;
+}
+#overview-restaurant-tagline {
+  margin-top: 4px;
+  padding: 2px 0 0;
+  color: #656666;
+  font: 15px 'Calibre-Regular';
+
+}
+.overview-wegot-review-title {
+  font: 16px/12px 'Calibre-Semibold';
+  letter-spacing: 0.09em;
+  color: #656666;
+}
+/* ====================================================== */
+/* ============ Basic Details Module Styles ============= */
+/* ====================================================== */
+#overview-basic-details {
+  margin-top: 4px;
+  padding: 2px 0 0;
+  color: #656666;
+  font: 15px 'Calibre-Regular';
+}
+.overview-basic-details-specific {
+  display: inline-block;
+  color: #656666;
+}
+/* ====================================================== */
+/* ============= WeGot Divider Line Styles ============== */
+/* ====================================================== */
+#overview-hline {
+  height: 1px;
+  border: 0;
+  border-top: 4px double;
+  margin: 1.2em 0;
+  padding: 0;
+}
+#overview-divider-line {
+  position: relative;
+}
+#logo {
+  position: absolute;
+  top: 50%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+  border-radius: 12px;
+  padding: 0 0.10em;
+  background: white;
+}
+/* ====================================================== */
+/* ============= WeGot Review Module Styles ============= */
+/* ====================================================== */
+#overview-wegot-review {
+  border-bottom: 1px #d0d2d3 solid;
+  padding-bottom: 12px;
+  margin-top: 13px;
+  max-width: 392px;
+
+  display: flex;
+  flex-direction: row;
+}
+.overview-wegot-details-box {
+  height: 60px;
+  width: 130px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.overview-wegot-rating-details {
+  font-size: 28px;
+  margin-bottom: 2px;
+
+}
+.overview-wegot-details-subtitle {
+  font-size: 12px;
+  margin-top: 2px;
+}
+.overview-wegot-midbox {
+  border-right: 1px #d0d2d3 solid;
+  border-left: 1px #d0d2d3 solid;
+}
+.overview-middot {
+  margin: 0px 4px 0 4px;
+}
+/* ====================================================== */
+/* =========== Long Description Module Styles =========== */
+/* ====================================================== */
+#overview-long-description {
+  margin-top: 26px;
+  font-size: 18px;
+  line-height: 24px;
 }
