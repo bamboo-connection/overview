@@ -47,10 +47,17 @@
     "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
+    "file-loader": "^1.1.10",
     "jest": "^22.4.2",
     "jest-enzyme": "^4.2.0",
     "nodemon": "^1.15.1",
     "superagent": "^3.8.2",
     "supertest": "^3.0.0"
+  },
+  "jest": { 
+    "moduleNameMapper": { 
+    "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/assetsTransformer.js", 
+    "\\.(css|less)$": "<rootDir>/assetsTransformer.js" 
+    }
   }
 }

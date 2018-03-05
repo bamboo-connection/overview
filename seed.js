@@ -9,6 +9,7 @@ const seedDb = (data) => {
   const overviewInfo = data.map(({ result }) => (
     {
       id: result.place_id,
+      name: result.name,
       tagline: result.tagline,
       type: 'restaurant',
       vicinity: result.vicinity,

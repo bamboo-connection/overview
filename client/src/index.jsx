@@ -4,4 +4,4 @@ import Overview from './components/Overview';
 import { ids } from './../../ids';
 import './style.css';
 
-ReactDOM.render(<Overview ids={ids} />, document.getElementById('app'));
+ReactDOM.render(<Overview ids={ids} />, document.getElementById('overview-app'));
