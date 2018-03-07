@@ -20,7 +20,7 @@ const WeGotReview = (({ food, decor, service }) => (
 
 
 WeGotReview.propTypes = {
-  food: PropTypes.number.isRequired,
+  food: PropTypes.string.isRequired,
   decor: PropTypes.string.isRequired,
   service: PropTypes.string.isRequired,
 };

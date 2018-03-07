@@ -1,6 +1,8 @@
 import React from 'react';
 import { configure, mount, shallow, render } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import MockAdapter from 'axios-mock-adapter';
+import axios from 'axios';
 import Overview from '../client/src/components/Overview';
 import { ids } from '../ids';
 import db from '../db/db';
@@ -30,13 +32,20 @@ const testInsertion = (testData) => {
 };
 testInsertion(data);
 
-
 configure({ adapter: new Adapter() });
 
 describe('A suite for testing all components', () => {
+  const mockAxios = new MockAdapter(axios);
+  const testData = data;
   const overviewShallow = shallow(<Overview ids={ids} />);
   const overviewMount = mount(<Overview ids={ids} />);
   const overviewRender = render(<Overview ids={ids} />);
+
+  mockAxios.onGet('/restaurants/id').reply(200, testData);
+
+  it('should send out GET request and get data back', () => {
+    expect(overviewMount).toMatchSnapshot();
+  });
 
   it('should render without throwing an error', () => {
     expect(overviewShallow.contains(<div id="overview-restaurant-title">Title Placeholder</div>))

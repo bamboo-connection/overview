@@ -29,7 +29,7 @@ class Overview extends React.Component {
         this.handleRestaurantChange(response.data[0]);
       })
       .catch((err) => {
-        throw err;
+        console.log(err);
       });
   }
 
