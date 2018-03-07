@@ -3,6 +3,8 @@
 /* ====================================================== */
 body {
   background-color: #f1f1f2;
+}
+#overview-app {
   font-family: 'Raleway', sans-serif;
 }
 #overview-wrapper {
@@ -24,6 +26,7 @@ body {
   font: 15px;
 }
 .overview-wegot-review-title {
+  margin-top: 4px;
   font: 16px/12px;
   letter-spacing: 0.09em;
   color: #656666;
@@ -32,7 +35,7 @@ body {
 /* ============ Basic Details Module Styles ============= */
 /* ====================================================== */
 #overview-basic-details {
-  margin-top: 4px;
+  margin: 4px 0 4px 0;
   padding: 2px 0 0;
   color: #656666;
   font: 15px;
@@ -60,7 +63,7 @@ body {
   left: 80%;
   transform: translate(-50%, -50%);
   border-radius: 12px;
-  padding: 0 0.10em;
+  padding: 0 0.12em;
   background: white;
 }
 /* ====================================================== */
@@ -91,7 +94,6 @@ body {
 
 }
 .overview-wegot-details-subtitle {
-  /*font-family: 'Roboto', sans-serif;*/
   font-size: 12px;
   margin-top: 2px;
 }

@@ -41,7 +41,9 @@ describe('A suite for testing all components', () => {
   const overviewMount = mount(<Overview ids={ids} />);
   const overviewRender = render(<Overview ids={ids} />);
 
-  mockAxios.onGet('/restaurants/id').reply(200, testData);
+  it('should wait for this function to finish first', async () => {
+    await expect(mockAxios.onGet('/restaurants/id').reply(200, testData)).toMatchSnapshot();
+  });
 
   it('should send out GET request and get data back', () => {
     expect(overviewMount).toMatchSnapshot();

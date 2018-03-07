@@ -5,7 +5,7 @@ const data = require('./../data.test');
 
 describe('Test the root path with GET', () =>
   test('it should respond to the GET request with a 200', () =>
-    request(app).get('/').then(response =>
+    request(app).get('/restaurants/ChIJ0SMraI-AhYAREeJAvm2_yGM').then(response =>
       expect(response.statusCode).toBe(200))));
 
 // When these below test is run, the coverage tool insists that
