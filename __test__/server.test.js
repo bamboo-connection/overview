@@ -5,7 +5,7 @@ const data = require('./../data.test');
 
 describe('Test the root path with GET', () =>
   test('it should respond to the GET request with a 200', () =>
-    request(app).get('/').then(response =>
+    request(app).get('/restaurants/ChIJ0SMraI-AhYAREeJAvm2_yGM').then(response =>
       expect(response.statusCode).toBe(200))));
 
 // When these below test is run, the coverage tool insists that
@@ -13,9 +13,9 @@ describe('Test the root path with GET', () =>
 // This is despite the fact that the test totally passes.
 // I am unsure as to what the issue is here.
 
-describe('Test a non-existent endpoint with POST', () =>
+describe('Test the restaurants endpoint with POST', () =>
   test('it should respond to the POST request with a 404', () =>
-    request(app).post('/arglebargle').then(response =>
+    request(app).post('/restaurants/ChIJ0SMraI-AhYAREeJAvm2_yGM').then(response =>
       expect(response.statusCode).toBe(404))));
 
 describe('Test MongoDB', () =>

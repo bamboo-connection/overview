@@ -9,6 +9,6 @@ app.use(webpackDevMiddleware(compiler, {
   publicPath: config.output.publicPath,
 }));
 
-app.listen(2100, () => {
-  console.log('Listening on port:', 2100);
+app.listen(3002, () => {
+  console.log('Listening on port 3002');
 });

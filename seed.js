@@ -11,7 +11,7 @@ const seedDb = (data) => {
       id: result.place_id,
       name: result.name,
       tagline: result.tagline,
-      type: 'restaurant',
+      type: 'Restaurant',
       vicinity: result.vicinity,
       priceLevel: result.price_level,
       zagatFood: Number(result.zagat_food),

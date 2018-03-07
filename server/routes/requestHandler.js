@@ -4,7 +4,7 @@ const actions = {
   GET: function respondToGETRequest(req, res) {
     db.findOneById(req.params.id, (err, result) => {
       if (err) {
-        res.sendStatus(500);
+        res.send(err);
       } else {
         res.send(result);
       }

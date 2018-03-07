@@ -2,7 +2,10 @@
 /* ============= App/Overview Module Styles ============= */
 /* ====================================================== */
 body {
-  background-color: #f1f1f2;;
+  background-color: #f1f1f2;
+}
+#overview-app {
+  font-family: 'Raleway', sans-serif;
 }
 #overview-wrapper {
   width: 55%;
@@ -13,18 +16,18 @@ body {
 }
 #overview-restaurant-title {
   letter-spacing: 0.10em;
-  font: bold 'Calibre-Medium';
+  font-weight: bold;
   font-size: 24px;
 }
 #overview-restaurant-tagline {
   margin-top: 4px;
   padding: 2px 0 0;
   color: #656666;
-  font: 15px 'Calibre-Regular';
-
+  font: 15px;
 }
 .overview-wegot-review-title {
-  font: 16px/12px 'Calibre-Semibold';
+  margin-top: 4px;
+  font: 16px/12px;
   letter-spacing: 0.09em;
   color: #656666;
 }
@@ -32,10 +35,10 @@ body {
 /* ============ Basic Details Module Styles ============= */
 /* ====================================================== */
 #overview-basic-details {
-  margin-top: 4px;
+  margin: 4px 0 4px 0;
   padding: 2px 0 0;
   color: #656666;
-  font: 15px 'Calibre-Regular';
+  font: 15px;
 }
 .overview-basic-details-specific {
   display: inline-block;
@@ -60,7 +63,7 @@ body {
   left: 80%;
   transform: translate(-50%, -50%);
   border-radius: 12px;
-  padding: 0 0.10em;
+  padding: 0 0.12em;
   background: white;
 }
 /* ====================================================== */
@@ -85,6 +88,7 @@ body {
   justify-content: center;
 }
 .overview-wegot-rating-details {
+  font-family: 'Roboto', sans-serif;
   font-size: 28px;
   margin-bottom: 2px;
 
@@ -104,7 +108,9 @@ body {
 /* =========== Long Description Module Styles =========== */
 /* ====================================================== */
 #overview-long-description {
-  margin-top: 26px;
+  font-family: 'Roboto-light', sans-serif;
   font-size: 18px;
+  letter-spacing: .013em;
+  margin-top: 26px;
   line-height: 24px;
 }

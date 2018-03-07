@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import PropTypes from 'prop-types';
 import BasicDetails from './BasicDetails';
 import DividerLine from './WeGotDividerLine';
 import WeGotReview from './WeGotReview';
@@ -23,13 +22,22 @@ class Overview extends React.Component {
   }
 
   componentDidMount() {
-    const id = this.props.ids[Math.floor(Math.random() * this.props.ids.length)];
-    axios.get(`/restaurants/${id}`)
+    this.fetchRestaurantInfo();
+  }
+
+  fetchRestaurantInfo() {
+    let id = window.location.href.split('/')[4];
+    if (!id) {
+      id = 'ChIJUcXYWWGAhYARmjMY2bJAG2s';
+    }
+    console.log('the fetch ID is this:', id);
+
+    axios.get(`/api/restaurants/${id}/overview`)
       .then((response) => {
         this.handleRestaurantChange(response.data[0]);
       })
       .catch((err) => {
-        throw err;
+        console.log(err);
       });
   }
 
@@ -76,9 +84,5 @@ class Overview extends React.Component {
   }
 }
 
-
-Overview.propTypes = {
-  ids: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
 
 export default Overview;
