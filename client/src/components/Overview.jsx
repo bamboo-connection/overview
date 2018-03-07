@@ -41,12 +41,6 @@ class Overview extends React.Component {
       });
   }
 
-  hrefChangeListener() {
-    window.onpopstate = function(event) {
-      alert("location: " + document.location + ", state: " + JSON.stringify(event.state));
-    };
-  }
-
   handleRestaurantChange(restaurantDetails) {
     let priceLevelInDollars = '';
     const priceLevel = restaurantDetails.priceLevel || 1;
