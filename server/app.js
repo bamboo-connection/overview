@@ -10,7 +10,7 @@ const indexHTMLPath = path.join(__dirname, './../client/dist/index.html');
 app.use(cors());
 app.use(morgan('dev'));
 
-// app.use(express.static(path.join(__dirname, './../client/dist'))); //this is doing nothing atm
+app.use('/', express.static(path.join(__dirname, './../client/dist'))); // this is doing nothing atm
 
 app.get('/restaurants/:id', (req, res) => {
   res.sendFile(indexHTMLPath);

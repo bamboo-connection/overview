@@ -1,5 +1,4 @@
 import React from 'react';
-// import weGotLogo from '../../../WeGot_small_logo.png';
 
 const DividerLine = () => (
   <div id="overview-divider-line">
@@ -10,5 +9,3 @@ const DividerLine = () => (
 
 
 export default DividerLine;
-
-// <img id="overview-logo" alt="overview-wegot-logo" src="WeGot_small_logo.png" />
