@@ -59,3 +59,7 @@ typings/
 
 # jest coverage tools
 coverage/
+
+#webpack output
+bundle.js
+bundle.js.map

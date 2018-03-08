@@ -20,9 +20,9 @@ const WeGotReview = (({ food, decor, service }) => (
 
 
 WeGotReview.propTypes = {
-  food: PropTypes.string.isRequired,
-  decor: PropTypes.string.isRequired,
-  service: PropTypes.string.isRequired,
+  food: PropTypes.number.isRequired,
+  decor: PropTypes.number.isRequired,
+  service: PropTypes.number.isRequired,
 };
 
 export default WeGotReview;
