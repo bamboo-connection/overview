@@ -20,10 +20,23 @@ const WeGotReview = (({ food, decor, service }) => (
 
 
 WeGotReview.propTypes = {
-  food: PropTypes.number.isRequired,
-  decor: PropTypes.number.isRequired,
-  service: PropTypes.number.isRequired,
+  food: PropTypes.oneOfType([
+    PropTypes.string.isRequired,
+    PropTypes.number.isRequired,
+  ]),
+  decor: PropTypes.oneOfType([
+    PropTypes.string.isRequired,
+    PropTypes.number.isRequired,
+  ]),
+  service: PropTypes.oneOfType([
+    PropTypes.string.isRequired,
+    PropTypes.number.isRequired,
+  ]),
+};
+WeGotReview.defaultProps = {
+  food: PropTypes.string.isRequired,
+  decor: PropTypes.string.isRequired,
+  service: PropTypes.string.isRequired,
 };
 
 export default WeGotReview;
-

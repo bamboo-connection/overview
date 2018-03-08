@@ -40,8 +40,8 @@ From within the root directory:
 ```sh
 Install dependencies: npm install OR yarn install
 Start webpack: npm run dev OR yarn dev
-Spin up mongo on your computer and then: npm run seed OR yarn seed
 Start server: npm start OR yarn start
+Spin up mongo on your computer and then: npm run seed OR yarn seed
 ```
 
 
