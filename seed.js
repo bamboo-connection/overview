@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
 const db = require('./db/db.js');
-
 const allRestaurantData = require('./finData.json');
 
-mongoose.connect('mongodb://127.0.0.1/weGotData');
+const dbAddress = process.env.DB_ADDRESS || 'localhost';
+
+mongoose.connect(`mongodb://${dbAddress}/weGotData`);
 
 const seedDb = (data) => {
   const overviewInfo = data.map(({ result }) => (
@@ -20,7 +21,10 @@ const seedDb = (data) => {
       longDescription: result.long_description,
     }
   ));
-  db.insertMany(overviewInfo);
+  db.insertMany(overviewInfo, () => {
+    console.log('done seeding!');
+    mongoose.disconnect();
+  });
 };
 
 seedDb(allRestaurantData);

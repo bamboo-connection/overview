@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/weGotData');
-
 const restaurantSchema = mongoose.Schema({
   id: {
     type: String,
