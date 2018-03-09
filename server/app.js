@@ -17,4 +17,3 @@ app.get('/api/restaurants/:id/overview', handler.requestHandler);
 
 module.exports = app;
 
-// "ChIJtSIPQImAhYARdWljrkbLzDM","ChIJ-WNBZ4-AhYAR9Y2WG1sRo7Q"

@@ -8,11 +8,10 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 #overview-wrapper {
-  width: 55%;
   border: 1px solid white;
   background: white;
   padding: 26px 32px 32px;
-  max-width: 900px
+  max-width: 900px;
 }
 #overview-restaurant-title {
   letter-spacing: 0.10em;
