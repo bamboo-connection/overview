@@ -12,7 +12,7 @@ class Overview extends React.Component {
       renderBool: false,
       restaurantTitle: 'Title Placeholder',
       restaurantTagline: 'Tagline Placeholder',
-      restaurantType: 'Restaurant', // this is hardcoded for now due to a capitalization error in the data.
+      restaurantType: 'Restaurant',
       restaurantVicinity: 'Vicinity Placeholder',
       restaurantPriceLevel: 'Price Level Placeholder',
       weGotFoodRating: '3.3',

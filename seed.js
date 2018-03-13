@@ -7,23 +7,30 @@ const dbAddress = process.env.DB_ADDRESS || 'localhost';
 mongoose.connect(`mongodb://${dbAddress}/weGotData`);
 
 const seedDb = (data) => {
-  const overviewInfo = data.map(({ result }) => (
-    {
-      id: result.place_id,
-      name: result.name,
-      tagline: result.tagline,
-      type: 'Restaurant',
-      vicinity: result.vicinity,
-      priceLevel: result.price_level,
-      zagatFood: Number(result.zagat_food),
-      zagatDecor: Number(result.zagat_decor),
-      zagatService: Number(result.zagat_service),
-      longDescription: result.long_description,
+  db.count().then((counts) => {
+    if (counts === 0) {
+      const overviewInfo = data.map(({ result }) => (
+        {
+          id: result.place_id,
+          name: result.name,
+          tagline: result.tagline,
+          type: 'Restaurant',
+          vicinity: result.vicinity,
+          priceLevel: result.price_level,
+          zagatFood: Number(result.zagat_food),
+          zagatDecor: Number(result.zagat_decor),
+          zagatService: Number(result.zagat_service),
+          longDescription: result.long_description,
+        }
+      ));
+      db.insertMany(overviewInfo, () => {
+        console.log('done seeding!');
+        mongoose.disconnect();
+      });
+    } else {
+      console.log('already seeded!');
+      mongoose.disconnect();
     }
-  ));
-  db.insertMany(overviewInfo, () => {
-    console.log('done seeding!');
-    mongoose.disconnect();
   });
 };
 

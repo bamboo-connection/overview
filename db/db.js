@@ -26,5 +26,8 @@ const insertMany = (restaurant, callback) => {
   RestaurantModel.insertMany(restaurant, callback);
 };
 
+const count = () => RestaurantModel.count();
+
 exports.findOneById = findOneById;
 exports.insertMany = insertMany;
+exports.count = count;
